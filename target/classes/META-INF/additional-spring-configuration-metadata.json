@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "crossorigin.server",
+    "type": "java.lang.String",
+    "description": "A description for 'crossorigin.server'"
+  },
+  {
+    "name": "crossorigin.local",
+    "type": "java.lang.String",
+    "description": "A description for 'crossorigin.local'"
+  }
+]}

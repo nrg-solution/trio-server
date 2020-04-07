@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+
+$(document).ready(function(){
+	$('#loading').hide();
+	
+});
+
+function callSubmit()	{
+	$('#uploadRecipt').hide();	
+	$('#loading').show();
+	
+}
+</script>
+
+<style>
+.loader {
+			  border: 16px solid #f3f3f3;
+			  border-radius: 50%;
+			  border-top: 16px solid blue;
+			  border-bottom: 16px solid blue;
+			  width: 120px;
+			  height: 120px;
+			  -webkit-animation: spin 2s linear infinite;
+			  animation: spin 2s linear infinite;
+			}
+
+			@-webkit-keyframes spin {
+			  0% { -webkit-transform: rotate(0deg); }
+			  100% { -webkit-transform: rotate(360deg); }
+			}
+
+			@keyframes spin {
+			  0% { transform: rotate(0deg); }
+			  100% { transform: rotate(360deg); }
+			}
+</style>
+
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- 
+	<spring:url value="/css/main.css" var="springCss" />
+	<link href="${springCss}" rel="stylesheet" />
+	 -->
+<link href="${jstlCss}" rel="stylesheet" />
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="color:white">TRIO Portal Payment upload</a>
+			</div>
+			
+		</div>
+	</nav>
+<div id="uploadRecipt">
+
+<form method="POST" action="http://localhost:8092/trio-portal/upload" enctype="multipart/form-data">
+   <table>
+   <tr>
+   <td width="20px"> </td>
+  <td>
+  <label>Enter TRIO Number </label> &nbsp;&nbsp;&nbsp;  </td> 
+  <td width="100px"> 
+   <input type=text name="gglnumber" id="gglnumber">  </td>
+   
+   <td width="20px"> </td>
+   <td style="padding-top:15px">
+   
+    <input type="file" name="file" /> &nbsp;&nbsp;&nbsp;    
+   </td>
+    <td>
+    <input type="submit" value="Submit" onclick="callSubmit()"/>
+  </td>  
+   </tr>
+   </table>
+ 
+
+</form>
+</div>
+
+<div class="loader" id="loading"></div>
+
+</body>
+</html>
